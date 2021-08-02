@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="color: #f3f2f2;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto"></ul>
+        
+        <span ><button class="btn btn-secondary my-2 my-sm-0 rounded-circle"style="margin: 5px;" mat-button [matMenuTriggerFor]="menu">{{logo}}</button></span>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="logout()">LogOut</button>
+        </mat-menu>
+        <button class="btn btn-secondary my-2 my-sm-0" (click)="changeLanguage()"  *ngIf="lang==='en';" >العربية</button>
+        <button class="btn btn-secondary my-2 my-sm-0" (click)="changeLanguage()"  *ngIf="lang==='ar';">English</button>
+      </div>
+    </div>
+  </nav>

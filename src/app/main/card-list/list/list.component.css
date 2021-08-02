@@ -1,0 +1,9 @@
+/* 
+  :host ::ng-deep .mat-radio-outer-circle{
+    
+  } */
+
+  .center{
+    margin: auto;
+    width: 50%;
+  }
