@@ -1,0 +1,9 @@
+<div class="row" *ngIf="dataList.length!==0">
+  <app-card *ngFor="let i of dataList" [item]="i" [isSelected]="selectedItem"></app-card>
+</div>
+
+<div class="row" *ngIf="dataList.length===0">
+  <div class="center">
+    <img src="../../../assets/resource/no_result.gif"/>
+  </div>
+</div>
