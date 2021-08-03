@@ -55,14 +55,18 @@ export class SignUpComponent implements OnInit {
   submit(){    
     this.signUp_clicked=true
     if(this.formGroup.valid){
-      let user:user = {"id":"0","name":this.formGroup.controls['username'].value,"password":this.formGroup.controls['password'].value} 
-      let id = this.userServices.createUser(user)
-      if(id!=='0'){
-        this.toastr.success('user created successfully, your id is : '+id, 'success');
-        this.router.navigate(['login'])
-        return 
-      }
-      this.toastr.error('Sorry, server error . please try again later', 'Faild')
+      let user:user = {"id":"0","name":this.formGroup.controls['username'].value,"password":this.formGroup.controls['password'].value}
+      this.userServices.createUser(user).toPromise().then(data=>{
+        let id=data;
+        if(id!=='0'){
+          this.toastr.success('user created successfully, your id is : '+ id , 'success');
+          this.router.navigate(['login'])
+          return 
+        }
+        this.toastr.error('server error . please try again later', 'Faild')
+      })
+      
+      
     }
     
   }
@@ -112,8 +116,6 @@ export class SignUpComponent implements OnInit {
   }
 
   confirmPassword(fg:FormGroup){
-    console.log(fg.get('password')?.value+'    '+fg.get('password2')?.value);
-    
     if(fg.get('password')?.value===fg.get('password2')?.value){
       return null
     }

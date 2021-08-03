@@ -11,7 +11,7 @@ import {DataResolver} from './shared/services/DataResolver.service'
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, "./assets/i18n/", ".json");//ar,en
-  }
+}
   
 
 const appRoutes:Routes = [

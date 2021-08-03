@@ -48,15 +48,10 @@ export class usersServices {
         }
     
 
-    createUser(user: user) {
-        user.id = (this.users.length + 1).toString()
-        this.http.post('https://realsoft-project-default-rtdb.firebaseio.com/users.json', user).subscribe(response => {
-            console.log(response)
-        }, error => {
-            return "0"
-        })
-        this.loggedIn = true
-        return user.id
+     createUser(user: user) {
+        return this.http.get('http://localhost:3000/createuser/'+user.name+'/'+user.password)
+     
+        
     }
 
     isAuthenticated() {
