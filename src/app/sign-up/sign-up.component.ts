@@ -65,10 +65,7 @@ export class SignUpComponent implements OnInit {
         }
         this.toastr.error('server error . please try again later', 'Faild')
       })
-      
-      
     }
-    
   }
 
   symbol(str:string){

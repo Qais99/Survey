@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
 
   lang:string = this.LaguageService.getLang()
 
-  name:string=this.userService.username
+  name:string=this.userService.username;
   logo:string ='';
 
   ngOnInit(): void {

@@ -25,6 +25,8 @@ export class LoginComponent implements OnInit {
     })
 
     let cookie : user = JSON.parse(this.cookie.get("loggedIn",false))
+    console.log(cookie);
+    
     if(cookie){
       this.userServices.loggedIn = true
       this.userServices.username = cookie.name
